@@ -33,6 +33,7 @@
       text-decoration: none;
       font-size: 20px;
       transition: .25s;
+      cursor: pointer;
     }
     .btn-play:hover { transform: scale(1.08); box-shadow: 0 0 20px #0088ff; }
     #particles-bg {
@@ -69,12 +70,12 @@
   <section class="hero">
     <img src="logo.png" alt="PhaseZero Logo" class="hero-logo">
     <h1 class="hero-title">PhaseZero SMP</h1>
-    <p class="hero-sub">IP ➤ history-portable.gl.joinmc.link<br>Version ➤ 1.21.4</p>
-    <a href="#play" class="btn-play">Join Now</a>
+    <p class="hero-sub">Survival<br>Community</p>
+    <a class="btn-play" id="playBtn">Join Now</a>
   </section>
 
   <!-- Server Status -->
-  <div class="status-box" id="serverStatus">Checking server status...</div>
+  <div class="status-box" id="serverStatus">Server Online</div>
 
   <footer class="footer">© 2025 PhaseZero — All Rights Reserved</footer>
 
@@ -110,8 +111,13 @@
     }
     animate();
 
-    // Fake Server Status
-    document.getElementById('serverStatus').innerText = "Server Online — 12 Players";
+    // Server Status
+    document.getElementById('serverStatus').innerText = "Server Online";
+
+    // Join Button Popup
+    document.getElementById('playBtn').addEventListener('click', () => {
+      alert("Join PhaseZero SMP!\n\nIP: history-portable.gl.joinmc.link\nVersion: 1.21.4");
+    });
   </script>
 
 </body>
